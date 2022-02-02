@@ -10,6 +10,7 @@ import IOKit
 
 class ViewController: NSViewController {
     
+    internal var timer: Timer?
     var vmPath = ""
     var models = ["MacBookPro16,4", "MacBookPro16,3", "MacBookPro16,2", "MacBookPro16,1", "MacBookPro15,4", "MacBookPro15,3", "MacBookPro15,2", "MacBookPro15,1", "MacBookAir9,1", "MacBookAir8,2", "MacBookAir8,1", "MacBook10,1", "MacPro7,1", "MacPro6,1", "iMac20,2", "iMac20,1", "iMac19,1", "iMacPro1,1", "Macmini8,1", "Macmini7,1"]
     
@@ -237,15 +238,10 @@ class ViewController: NSViewController {
         return nil
     }
     
-    func getPublicIPAddress(completion: @escaping (String?) -> ()) {
-        ipIndicator.startAnimation(nil)
-        let urlSession = URLSession(configuration: .ephemeral)
-        guard let url = URL(string: "https://api.ipify.org/") else { return completion(nil) }
-        urlSession.dataTask(with: URLRequest(url: url)) { data, response, error in
-            guard let data = data else { return }
-            let ip = String(data: data, encoding: .utf8)
-            completion(ip)
-        }.resume()
+    @objc func updateIPAddress() {
+        DispatchQueue.main.async {
+            self.IPAddressField.stringValue = oldIP ?? "Undefined"
+        }
     }
     
     override func viewDidLoad() {
@@ -256,15 +252,12 @@ class ViewController: NSViewController {
         serialNumberField.isEditable = false
         IPAddressField.isEditable = false
         refreshData(load: true)
+        
+        timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(updateIPAddress), userInfo: nil, repeats: true)
+        timer!.tolerance = 0.5
     }
     
     func refreshData(load: Bool = false) {
-        getPublicIPAddress { ip in
-            DispatchQueue.main.async {
-                self.IPAddressField.stringValue = ip ?? "Undefined"
-                self.ipIndicator.stopAnimation(nil)
-            }
-        }
         if vmPath.isEmpty && !load {
             showError(title: "Select VM", body: "Select file with .vmwarevm extension")
             return

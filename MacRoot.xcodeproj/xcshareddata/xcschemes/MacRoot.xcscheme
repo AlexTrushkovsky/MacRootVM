@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6E71D26F27A3353D0021D398"
-               BuildableName = "MacRoot.app"
+               BuildableName = "MacRootVM.app"
                BlueprintName = "MacRootVM"
                ReferencedContainer = "container:MacRoot.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6E71D26F27A3353D0021D398"
-            BuildableName = "MacRoot.app"
+            BuildableName = "MacRootVM.app"
             BlueprintName = "MacRootVM"
             ReferencedContainer = "container:MacRoot.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6E71D26F27A3353D0021D398"
-            BuildableName = "MacRoot.app"
+            BuildableName = "MacRootVM.app"
             BlueprintName = "MacRootVM"
             ReferencedContainer = "container:MacRoot.xcodeproj">
          </BuildableReference>

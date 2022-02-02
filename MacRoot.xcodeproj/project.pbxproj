@@ -11,6 +11,7 @@
 		6E71D27627A3353D0021D398 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E71D27527A3353D0021D398 /* ViewController.swift */; };
 		6E71D27827A3353E0021D398 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E71D27727A3353E0021D398 /* Assets.xcassets */; };
 		6E71D27B27A3353E0021D398 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E71D27927A3353E0021D398 /* Main.storyboard */; };
+		6EFFAF4327A9956500C7AD8D /* ProxyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFFAF4227A9956500C7AD8D /* ProxyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		6E71D27727A3353E0021D398 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E71D27A27A3353E0021D398 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6E71D27C27A3353E0021D398 /* MacRoot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacRoot.entitlements; sourceTree = "<group>"; };
+		6EFFAF4227A9956500C7AD8D /* ProxyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				6E71D27327A3353D0021D398 /* AppDelegate.swift */,
 				6E71D27527A3353D0021D398 /* ViewController.swift */,
+				6EFFAF4227A9956500C7AD8D /* ProxyViewController.swift */,
 				6E71D27727A3353E0021D398 /* Assets.xcassets */,
 				6E71D27927A3353E0021D398 /* Main.storyboard */,
 				6E71D27C27A3353E0021D398 /* MacRoot.entitlements */,
@@ -132,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E71D27627A3353D0021D398 /* ViewController.swift in Sources */,
+				6EFFAF4327A9956500C7AD8D /* ProxyViewController.swift in Sources */,
 				6E71D27427A3353D0021D398 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +288,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ua.pp.trushkovsky.MacRoot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -311,6 +316,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ua.pp.trushkovsky.MacRoot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
